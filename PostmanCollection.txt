@@ -1,0 +1,132 @@
+{
+  "info": {
+    "name": "MoPale API",
+    "_postman_id": "e5c7f0f0-1234-5678-9101-abcdef123456",
+    "description": "Coleção de testes para o backend NestJS MoPale",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Users",
+      "item": [
+        {
+          "name": "Criar Usuário",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"João Silva\",\n  \"email\": \"joao@email.com\",\n  \"password\": \"123456\"\n}"
+            },
+            "url": { "raw": "http://127.0.0.1:3000/users", "protocol": "http", "host": ["127.0.0.1"], "port": "3000", "path": ["users"] }
+          }
+        },
+        {
+          "name": "Listar Usuários",
+          "request": {
+            "method": "GET",
+            "url": { "raw": "http://127.0.0.1:3000/users", "protocol": "http", "host": ["127.0.0.1"], "port": "3000", "path": ["users"] }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Auth",
+      "item": [
+        {
+          "name": "Login",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"joao@email.com\",\n  \"password\": \"123456\"\n}"
+            },
+            "url": { "raw": "http://127.0.0.1:3000/auth/login", "protocol": "http", "host": ["127.0.0.1"], "port": "3000", "path": ["auth", "login"] }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Properties",
+      "item": [
+        {
+          "name": "Criar Propriedade",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"title\": \"Casa Moderna\",\n  \"description\": \"Casa com piscina\",\n  \"price\": 250000,\n  \"city\": \"Luanda\",\n  \"category\": \"Venda\"\n}"
+            },
+            "url": { "raw": "http://127.0.0.1:3000/properties", "protocol": "http", "host": ["127.0.0.1"], "port": "3000", "path": ["properties"] }
+          }
+        },
+        {
+          "name": "Listar Propriedades",
+          "request": {
+            "method": "GET",
+            "url": { "raw": "http://127.0.0.1:3000/properties", "protocol": "http", "host": ["127.0.0.1"], "port": "3000", "path": ["properties"] }
+          }
+        },
+        {
+          "name": "Listar por Categoria",
+          "request": {
+            "method": "GET",
+            "url": { "raw": "http://127.0.0.1:3000/properties/category/Venda", "protocol": "http", "host": ["127.0.0.1"], "port": "3000", "path": ["properties", "category", "Venda"] }
+          }
+        },
+        {
+          "name": "Listar por Cidade",
+          "request": {
+            "method": "GET",
+            "url": { "raw": "http://127.0.0.1:3000/properties/city/Luanda", "protocol": "http", "host": ["127.0.0.1"], "port": "3000", "path": ["properties", "city", "Luanda"] }
+          }
+        },
+        {
+          "name": "Atualizar Propriedade",
+          "request": {
+            "method": "PUT",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"title\": \"Casa Atualizada\",\n  \"description\": \"Casa reformada com piscina\",\n  \"price\": 260000,\n  \"city\": \"Luanda\",\n  \"category\": \"Venda\"\n}"
+            },
+            "url": { "raw": "http://127.0.0.1:3000/properties/1", "protocol": "http", "host": ["127.0.0.1"], "port": "3000", "path": ["properties", "1"] }
+          }
+        },
+        {
+          "name": "Deletar Propriedade",
+          "request": {
+            "method": "DELETE",
+            "url": { "raw": "http://127.0.0.1:3000/properties/1", "protocol": "http", "host": ["127.0.0.1"], "port": "3000", "path": ["properties", "1"] }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Reviews",
+      "item": [
+        {
+          "name": "Criar Review",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"propertyId\": 1,\n  \"userId\": 1,\n  \"rating\": 5,\n  \"comment\": \"Ótima propriedade!\"\n}"
+            },
+            "url": { "raw": "http://127.0.0.1:3000/reviews", "protocol": "http", "host": ["127.0.0.1"], "port": "3000", "path": ["reviews"] }
+          }
+        },
+        {
+          "name": "Listar Reviews",
+          "request": {
+            "method": "GET",
+            "url": { "raw": "http://127.0.0.1:3000/reviews", "protocol": "http", "host": ["127.0.0.1"], "port": "3000", "path": ["reviews"] }
+          }
+        }
+      ]
+    }
+  ]
+}
